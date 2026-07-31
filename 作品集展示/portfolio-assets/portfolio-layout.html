@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=1200, initial-scale=1" />
+<title>AI 视频生产 Skill SOP 知识工程系统｜作品集长图</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    width: 1200px;
+    background: #081127;
+    font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    color: #eff7ff;
+  }
+  .poster {
+    width: 1200px;
+    min-height: 4580px;
+    padding: 58px 64px 72px;
+    background:
+      radial-gradient(circle at 8% 2%, rgba(49, 231, 255, .25), transparent 28%),
+      radial-gradient(circle at 95% 16%, rgba(151, 107, 255, .28), transparent 28%),
+      radial-gradient(circle at 15% 72%, rgba(0, 209, 255, .15), transparent 30%),
+      linear-gradient(180deg, #081127 0%, #0b1230 46%, #120b2c 100%);
+  }
+  .hero {
+    padding: 54px 56px 46px;
+    border: 1px solid rgba(117, 225, 255, .45);
+    border-radius: 36px;
+    background: linear-gradient(135deg, rgba(16, 40, 82, .92), rgba(22, 18, 65, .92));
+    box-shadow: 0 30px 100px rgba(0,0,0,.28), 0 0 70px rgba(46, 218, 255, .16);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -100px;
+    top: -120px;
+    width: 390px;
+    height: 390px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(97, 234, 255, .35), transparent 64%);
+  }
+  .eyebrow { color: #72e8ff; font-size: 22px; letter-spacing: 3px; font-weight: 700; }
+  h1 { margin: 16px 0 18px; font-size: 58px; line-height: 1.08; letter-spacing: -1px; }
+  .hero p { margin: 0; width: 760px; color: #c9dcff; font-size: 22px; line-height: 1.75; }
+  .chips { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+  .chip { padding: 12px 18px; border-radius: 999px; background: rgba(87, 129, 255, .16); border: 1px solid rgba(126, 234, 255, .28); color: #cfeaff; font-size: 17px; }
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin: 28px 0 36px; }
+  .metric { padding: 22px 20px; border-radius: 24px; background: rgba(255,255,255,.065); border: 1px solid rgba(255,255,255,.13); }
+  .metric strong { display: block; font-size: 32px; color: #ffffff; margin-bottom: 8px; }
+  .metric span { color: #a9bddf; font-size: 15px; }
+  .section-title { display: flex; align-items: center; gap: 16px; margin: 48px 0 22px; }
+  .section-title .num { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 16px; background: linear-gradient(135deg, #37e7ff, #7a74ff); color: white; font-weight: 900; font-size: 21px; box-shadow: 0 12px 34px rgba(55,231,255,.24); }
+  .section-title h2 { margin: 0; font-size: 34px; }
+  .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .flow-card { min-height: 130px; padding: 20px 18px; border-radius: 24px; background: rgba(255,255,255,.07); border: 1px solid rgba(126,234,255,.24); }
+  .flow-card strong { display: block; color: #fff; font-size: 21px; margin-bottom: 10px; }
+  .flow-card span { color: #a8bddb; font-size: 15px; line-height: 1.5; }
+  .module { margin-top: 34px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: stretch; padding: 28px; border-radius: 34px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); box-shadow: 0 24px 80px rgba(0,0,0,.18); }
+  .module:nth-of-type(even) { grid-template-columns: .9fr 1.1fr; }
+  .shot { border-radius: 24px; overflow: hidden; background: #eef3fb; box-shadow: 0 20px 60px rgba(0,0,0,.32); border: 1px solid rgba(255,255,255,.24); min-height: 430px; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; filter: saturate(1.05) contrast(1.02); }
+  .text { padding: 16px 12px; display: flex; flex-direction: column; justify-content: center; }
+  .tag { color: #78e9ff; font-size: 17px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+  .text h3 { margin: 14px 0 16px; font-size: 36px; line-height: 1.22; }
+  .text p { margin: 0 0 18px; color: #c7d9f8; font-size: 19px; line-height: 1.72; }
+  .bullets { display: grid; gap: 12px; margin-top: 8px; }
+  .bullet { padding: 14px 16px; border-radius: 18px; background: rgba(9, 22, 52, .66); border: 1px solid rgba(126,234,255,.20); color: #d9e8ff; font-size: 17px; line-height: 1.5; }
+  .role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+  .role { padding: 20px 18px; min-height: 130px; border-radius: 22px; background: rgba(255,255,255,.068); border: 1px solid rgba(126,234,255,.18); }
+  .role strong { display: block; font-size: 21px; color: #ffffff; margin-bottom: 8px; }
+  .role span { color: #aec3e4; font-size: 15px; line-height: 1.48; }
+  .principles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 22px; }
+  .principle { padding: 24px; border-radius: 26px; background: linear-gradient(135deg, rgba(29, 71, 111, .62), rgba(62, 39, 108, .62)); border: 1px solid rgba(255,255,255,.15); }
+  .principle strong { display: block; font-size: 23px; margin-bottom: 10px; color: #fff; }
+  .principle span { color: #bfd1ee; font-size: 16px; line-height: 1.6; }
+  .footer { margin-top: 48px; padding: 34px 42px; border-radius: 30px; background: rgba(7, 18, 43, .78); border: 1px solid rgba(126,234,255,.25); text-align: center; }
+  .footer strong { display: block; font-size: 30px; margin-bottom: 12px; }
+  .footer span { color: #9fb6d8; font-size: 18px; }
+</style>
+</head>
+<body>
+  <main class="poster">
+    <section class="hero">
+      <div class="eyebrow">PORTFOLIO CASE STUDY</div>
+      <h1>AI 视频生产 Skill SOP<br/>知识工程系统</h1>
+      <p>将真实案例、视频分析、创作样本与批准产物沉淀为多角色知识库：让 AI 视频生产从一次性 prompt，升级为可复用、可治理、可进化的生产知识系统。</p>
+      <div class="chips">
+        <span class="chip">Case-first Knowledge Engineering</span>
+        <span class="chip">六角色 Skill SOP</span>
+        <span class="chip">Stage1 / Stage2 治理链路</span>
+        <span class="chip">独立音频分析模块</span>
+      </div>
+    </section>
+
+    <div class="metrics">
+      <div class="metric"><strong>6</strong><span>角色知识库：制片、编剧、美术、分镜、剪辑、视频制片</span></div>
+      <div class="metric"><strong>2</strong><span>阶段沉淀：案例优先 + RU 分发到方法库</span></div>
+      <div class="metric"><strong>4+</strong><span>核心工作台：学习、音频、项目工程、导出</span></div>
+      <div class="metric"><strong>1</strong><span>统一治理原则：不手写专业 reference 补缺</span></div>
+    </div>
+
+    <div class="section-title"><div class="num">1</div><h2>系统流程：从素材到可治理知识库</h2></div>
+    <div class="flow">
+      <div class="flow-card"><strong>输入来源</strong><span>参考视频、Artist JSON、Video JSON、approved artifact、音频资产。</span></div>
+      <div class="flow-card"><strong>前端工作台</strong><span>上传、分析、预览、沉淀、分发、项目方案与音效分析。</span></div>
+      <div class="flow-card"><strong>后端 API</strong><span>证据归一、case 生成、target map、semantic route、native renderer。</span></div>
+      <div class="flow-card"><strong>Stage1 / Stage2</strong><span>先进入正式案例库，再从 eligible RU 分发到方法库。</span></div>
+      <div class="flow-card"><strong>多角色知识库</strong><span>服务后续 Agent 生成、审阅、交接与质量治理。</span></div>
+    </div>
+
+    <section class="module">
+      <div class="shot"><img src="module-export-overview.png" alt="知识学习工作台截图"></div>
+      <div class="text">
+        <div class="tag">MODULE 01</div>
+        <h3>知识学习 / 视频分析工作台</h3>
+        <p>从参考视频和剪辑教程中学习可复用知识，前端把分析、案例预览、分类选择和沉淀动作组织成一个统一工作流。</p>
+        <div class="bullets">
+          <div class="bullet">支持参考视频、教程分析、切镜检测与结构化 JSON 预览。</div>
+          <div class="bullet">按分类或选中样本组织沉淀范围，避免全量误写。</div>
+          <div class="bullet">为 Stage1 case 生成提供经过筛选的来源材料。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module">
+      <div class="text">
+        <div class="tag">MODULE 02</div>
+        <h3>Stage1：案例优先沉淀</h3>
+        <p>系统不把分析结果直接写成规则，而是先生成 public-safe 的正式案例卡，让经验先有来源、场景和边界。</p>
+        <div class="bullets">
+          <div class="bullet">只写入六库 references/cases/*.md 与 CASE_INDEX。</div>
+          <div class="bullet">正式 case 禁止 raw JSON、本地路径、debug 字段和 target path。</div>
+          <div class="bullet">Producer / Screenwriter 等专业知识必须通过 pipeline 进入库。</div>
+        </div>
+      </div>
+      <div class="shot"><img src="module-export-overview.png" alt="Stage1 案例沉淀相关界面截图"></div>
+    </section>
+
+    <section class="module">
+      <div class="shot"><img src="module-knowledge-learning.png" alt="导出与本地输出位置截图"></div>
+      <div class="text">
+        <div class="tag">MODULE 03</div>
+        <h3>Stage2：RU 分发与知识库治理</h3>
+        <p>Stage2 只读取正式 case 中的 eligible RU，并通过后端固定 target map + semantic route 写入对应角色方法库。</p>
+        <div class="bullets">
+          <div class="bullet">target_file / target_section 不由模型、前端或 case 决定。</div>
+          <div class="bullet">先 dry-run 预览，再 apply；section missing 或 broad parent 信号不足会阻断。</div>
+          <div class="bullet">cleanup preview 只读，不自动删除或重写正式知识。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module">
+      <div class="text">
+        <div class="tag">MODULE 04</div>
+        <h3>项目工程方案：从 Brief 到多角色产物</h3>
+        <p>在项目工程页中输入 brief，生成 Producer final，并继续推进 Screenwriter、Art Director、Storyboard Artist 等角色产物。</p>
+        <div class="bullets">
+          <div class="bullet">把创意、剧本、美术、分镜从单一 prompt 拆成分阶段产物。</div>
+          <div class="bullet">形成 project artifact，后续可作为批准生成物参与知识沉淀。</div>
+          <div class="bullet">面向真实生产交付，而不是只输出一次性文本。</div>
+        </div>
+      </div>
+      <div class="shot"><img src="module-project-workflow.png" alt="项目工程方案页面截图"></div>
+    </section>
+
+    <section class="module">
+      <div class="shot"><img src="module-audio-analysis.png" alt="音效分析页面截图"></div>
+      <div class="text">
+        <div class="tag">MODULE 05</div>
+        <h3>独立音效 / 音频分析模块</h3>
+        <p>音频模块独立于默认 Stage1 / Stage2 主链路，负责上传、分析、预览和同步音效、角色音色与背景音乐资源。</p>
+        <div class="bullets">
+          <div class="bullet">支持 sound_effect、voice_timbre、background_music 三类分析。</div>
+          <div class="bullet">提取声音类型、情绪风格、剪辑位置、适配场景和使用建议。</div>
+          <div class="bullet">当前作为独立资源分析结果；未来可选进入 case-first 沉淀。</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-title"><div class="num">2</div><h2>六大角色知识库边界</h2></div>
+    <div class="role-grid">
+      <div class="role"><strong>Producer</strong><span>商业目标、创意策略、主卖点、制作取舍、AI 可行性。</span></div>
+      <div class="role"><strong>Screenwriter</strong><span>故事主轴、剧本动作、对白字幕、信息释放、连续性。</span></div>
+      <div class="role"><strong>Art Director</strong><span>视觉目标、资产、风格、prompt-ready 字段、一致性。</span></div>
+      <div class="role"><strong>Storyboard Artist</strong><span>拆镜、镜头语言、画面 prompt、grid / revision 证据。</span></div>
+      <div class="role"><strong>Video Editor</strong><span>素材诊断、时间线、切点、声音字幕同步、平台版本。</span></div>
+      <div class="role"><strong>Video Producer</strong><span>AI 视频生成执行制片、任务拆分、参考图、prompt、版本和交接。</span></div>
+    </div>
+
+    <div class="section-title"><div class="num">3</div><h2>关键产品与工程设计</h2></div>
+    <div class="principles">
+      <div class="principle"><strong>Case-first 知识工程</strong><span>先沉淀案例，再从案例中抽取可分发知识，避免把一次性观察直接写成通用规则。</span></div>
+      <div class="principle"><strong>RU 协议作为分发入口</strong><span>每条知识都要具备 target、anchor、evidence、method、anti-pattern 和 boundary。</span></div>
+      <div class="principle"><strong>后端固定 target map</strong><span>模型不能决定写入文件和 section，降低跨库污染和错误追加风险。</span></div>
+      <div class="principle"><strong>Dry-run / Apply 分离</strong><span>正式写入前必须预览影响范围、可分发数量、路由结果和阻断原因。</span></div>
+    </div>
+
+    <section class="footer">
+      <strong>项目价值：把一次性 AI 生成，升级为可持续进化的生产知识系统。</strong>
+      <span>适合展示 AI 产品架构、知识工程、复杂流程建模、多角色 Agent 协同与内容生产工具设计能力。</span>
+    </section>
+  </main>
+</body>
+</html>
